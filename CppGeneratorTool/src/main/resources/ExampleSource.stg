@@ -1,0 +1,11 @@
+ExampleImplementationFile(node) ::= <<
+#pragma once
+
+#include "example_hello_world.h"
+#include \<iostream>
+
+void HelloWorld::sayHello() const
+{
+    std::cout \<\< "Hello World!" \<\< '\\n';
+}
+>>

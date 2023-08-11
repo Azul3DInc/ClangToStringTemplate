@@ -1,0 +1,95 @@
+//=============================================================================
+//
+// Interface Mock Specification File
+//
+//=============================================================================
+MockSpecificationFile(node) ::= <<
+#pragma once
+
+<node.includes:MockInclude();separator="\n">
+
+namespace <node.namespace>
+{
+    <node.classes:MockStruct();separator="\n">
+} // namespace <node.namespace>
+>>
+//----------------------------------------------------------------------------------------------
+
+//=============================================================================
+//
+// Mock Include
+//
+//=============================================================================
+MockInclude(item) ::= <<
+#include <item>
+>>
+//----------------------------------------------------------------------------------------------
+
+
+//=============================================================================
+//
+// Mock Struct
+//
+//=============================================================================
+MockStruct(node) ::= <<
+struct Mock<node.name> : public <node.name>
+{
+    <node.methods:MockMethod();separator="\n\n">
+};
+>>
+
+//----------------------------------------------------------------------------------------------
+
+//=============================================================================
+//
+// Mock Method
+//
+//=============================================================================
+MockMethod(node) ::= <<
+bool <node.uniqueName>_isCalled { false };
+unsigned <node.uniqueName>_callCount { 0 };
+<if(!node.isVoid && !node.isSelfReferenced)><node.returnTypeVar> <node.uniqueName>_return;<endif>
+<node.parameters:MockParameterDecl();separator="\n">
+
+<node.returnType> <node.name>(<node.parameters:MockInterfaceParameter();separator=", ">) override
+{
+    <node.uniqueName>_isCalled = true;
+    ++<node.uniqueName>_callCount;
+
+    <node.parameters:MockSetParameter();separator="">
+    <if(!node.isVoid)>return <if(!node.isSelfReferenced)><node.uniqueName>_return<else>*this<endif>;<endif>
+}
+>>
+//----------------------------------------------------------------------------------------------
+
+//=============================================================================
+//
+// Mock Parameter Decl
+//
+//=============================================================================
+MockInterfaceParameter(node) ::= <<
+<node.type> <node.name>
+>>
+//----------------------------------------------------------------------------------------------
+
+//=============================================================================
+//
+// Mock Parameter Decl
+//
+//=============================================================================
+MockParameterDecl(node) ::= <<
+std::vector\<<node.varType>\> <node.varName>;
+>>
+//----------------------------------------------------------------------------------------------
+
+//=============================================================================
+//
+// Mock Set Parameter
+//
+//=============================================================================
+MockSetParameter(node) ::= <<
+<if(node.isIterable)><node.varType> <node.varName>_element;<endif>
+<if(!node.isIterable)><node.varName>.push_back(<node.name>)<else>std::copy(<node.name>.begin(), <node.name>.end(), std::back_inserter(<node.varName>_element))<endif>;
+<if(node.isIterable)><node.varName>.push_back(<node.varName>_element);<endif>
+>>
+//----------------------------------------------------------------------------------------------

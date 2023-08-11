@@ -1,0 +1,6 @@
+{
+   "cppGeneratorToolPath": "/repo/ClangToStringTemplate/CppGeneratorTool/out/artifacts/CppGeneratorTool_jar/CppGeneratorTool.jar",
+   "extraIncludePaths": [],
+   "clangVersion": "clang++", 
+   "cppVersion": "c++17"
+}
