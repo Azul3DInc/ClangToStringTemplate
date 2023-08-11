@@ -45,3 +45,7 @@ python3 cpp-gen.py src/Interface.cpp include/Interface.h build/compile_commands.
 
 ### Relevant Resources
 (StringTemplate cheat sheet)[https://github.com/antlr/stringtemplate4/blob/master/doc/cheatsheet.md]
+
+## License
+
+For licensing information, including third-party dependencies, see the [LICENSES](LICENSES) file.
