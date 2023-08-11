@@ -37,5 +37,11 @@ Here is a list of steps to get started:
 3. Write .stg templates
 4. (optional) extend Vim Plugin to call cpp-gen.py with your AST and templates
 
+Here's an example python invocation:
+```
+python3 cpp-gen.py src/Interface.cpp include/Interface.h build/compile_commands.json MockSource.stg MockImplementationFile MockHeader.stg MockSpecificationFile \
+   --ast-template interface --output-paths src/Mocks/Mock.cpp include/Mocks/Mock.h
+```
+
 ### Relevant Resources
 (StringTemplate cheat sheet)[https://github.com/antlr/stringtemplate4/blob/master/doc/cheatsheet.md]

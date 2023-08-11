@@ -41,3 +41,5 @@ pom.xml.releaseBackup
 pom.xml.versionsBackup
 pom.xml.next
 release.properties
+
+CppGeneratorTool/out/artifacts/CppGeneratorTool_jar/* 
