@@ -28,7 +28,9 @@ ClangToStringTemplate also includes a Vim plugin integration. The plugin can aut
 
 You can install the Vim Plugin with `vim-plug` with:
 
-```Plug 'Azul3DInc/ClangToStringTemplate', {'rtp': 'cpp-gen/'}```
+```vim
+Plug 'Azul3DInc/ClangToStringTemplate', {'rtp': 'cpp-gen/'}
+```
 
 Remember, you'll need to add the CppGeneratorTool.jar to the Plugin's `config.json`.
 
@@ -45,7 +47,7 @@ Here is a list of steps to get started:
 4. (optional) extend Vim Plugin to call cpp-gen.py with your AST and templates
 
 Here's an example python invocation:
-```
+```bash
 python3 cpp-gen.py src/Interface.cpp include/Interface.h build/compile_commands.json MockSource.stg MockImplementationFile MockHeader.stg MockSpecificationFile \
    --ast-template interface --output-paths src/Mocks/Mock.cpp include/Mocks/Mock.h
 ```
