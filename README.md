@@ -45,6 +45,9 @@ python3 cpp-gen.py src/Interface.cpp include/Interface.h build/compile_commands.
 
 ## Installation
 
+## Known Issues
+- In the event of a segmentation fault during the parsing process, consider upgrading your version of clang in `config.json`. Known to fix this issue with clang++15.
+
 ## Relevant Resources
 [StringTemplate cheat sheet](https://github.com/antlr/stringtemplate4/blob/master/doc/cheatsheet.md)
 
