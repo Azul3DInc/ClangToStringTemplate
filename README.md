@@ -27,7 +27,8 @@ ClangToStringTemplate includes mock generation for interfaces as a fully functio
 ClangToStringTemplate also includes a Vim plugin integration. The plugin can automatically gather the necessary file paths to invoke the tool and seamlessly fit into your development workflow.
 
 You can install the Vim Plugin with `vim-plug` with:
-`Plug 'Azul3DInc/ClangToStringTemplate', {'rtp': 'cpp-gen/'}`
+
+```Plug 'Azul3DInc/ClangToStringTemplate', {'rtp': 'cpp-gen/'}```
 
 Remember, you'll need to add the CppGeneratorTool.jar to the Plugin's `config.json`.
 
