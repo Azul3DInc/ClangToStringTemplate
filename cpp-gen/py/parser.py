@@ -62,7 +62,8 @@ class CppParser():
 
       def extractCmakeIncludePaths(inputString):
             includePaths = []
-            pattern = r'-isystem\s+(\S+)'
+            # pattern = r'-isystem\s+(\S+)'
+            pattern = r'-(?:isystem|I)\s*(\S+)'
             matches = re.findall(pattern, inputString)
             includePaths.extend(matches)
             return includePaths

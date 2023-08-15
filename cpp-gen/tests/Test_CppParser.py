@@ -62,18 +62,19 @@ class Test_CppParser(unittest.TestCase):
       jsonAST = json.loads(jsonStr)
       self.assertEqual(jsonAST.get("name"), "fs")
 
-   # def test_ParseFooMissingInclude(self):
-   #    # SETUP
-   #    
-   #    test_directory = script_dir
-   #    cp = CppParser(None)
+   def test_compileCommandsJson(self):
+      # SETUP
 
-   #    # EXERCISE
-   #  
-   #    with self.assertRaises(Exception):
-   #          cp.parse(f'{test_directory}/test_files/src/IFoo.cpp', f'{test_directory}/test_files/include/IFoo.h')
+      test_directory = script_dir
+      cp = CppParser(f'{test_directory}/test_files/compile_commands.json')
 
-   #     # VERIFY
+      # EXERCISE
         
+      fileIncludePaths = cp.getCmakeIncludePaths("/home/user/project/file.cpp")
+
+      # VERIFY
+
+      self.assertEqual(len(fileIncludePaths), 2)
+
 if __name__ == '__main__':
     unittest.main()
