@@ -8,7 +8,7 @@ This project also provides an optional Vim plugin that can be used to generate C
 
 ## Requirements
 
-You must have working installations of Python3, Clang, and the JDK ($\geq$ ver. 16) to run the tool.
+You must have working installations of Python3, Clang, Maven, and the JDK ($\geq$ ver. 16) to run the tool.
 
 Projects using ClangToStringTemplate must have CMake ($\geq$ ver. 2.8.5) as your build system with `compile_commands.json` enabled. You can do so with the following CMake option:
 
@@ -20,8 +20,8 @@ This allows the tool to include the dependencies to fully parse your code with C
 
 ## Installation
 
-Run ./setup.sh in ClangToStringTemplate. The script will output the path to your jar. Modify your `config.json` in cpp-gen to include the jar path.
-If you're using the Vim Plugin, you'll need to modify cpp-gen where you store your vim plugins.
+Run `./setup.sh` in ClangToStringTemplate. The script will output the path to your jar. Modify your `config.json` in cpp-gen to include the jar path.
+If you're using the Vim plugin, you'll need to modify cpp-gen where you store your Vim plugins.
 
 ## Example Mock Generation
 
@@ -31,7 +31,7 @@ ClangToStringTemplate includes mock generation for interfaces as a fully functio
 
 ClangToStringTemplate also includes a Vim plugin integration. The plugin can automatically gather the necessary file paths to invoke the tool and seamlessly fit into your development workflow.
 
-You can install the Vim Plugin with `vim-plug` with:
+You can install the Vim plugin with `vim-plug` with:
 
 ```vim
 Plug 'Azul3DInc/ClangToStringTemplate', {'rtp': 'cpp-gen/'}
@@ -49,7 +49,7 @@ Here is a list of steps to get started:
 1. Write custom AST in CppGeneratorTool that builds itself from the Clang AST.
 2. Add AST to jar command line arguments
 3. Write .stg templates
-4. (optional) extend Vim Plugin to call cpp-gen.py with your AST and templates
+4. (optional) extend Vim plugin to call cpp-gen.py with your AST and templates
 
 Here's an example python invocation:
 ```bash
