@@ -8,9 +8,9 @@ This project also provides an optional Vim plugin that can be used to generate C
 
 ## Requirements
 
-You must have working installations of Python3, Clang, and the JDK to run the tool.
+You must have working installations of Python3, Clang, and the JDK ($\geq$ ver. 16) to run the tool.
 
-Projects using ClangToStringTemplate must have CMake (>= ver. 2.8.5) as your build system with `compile_commands.json` enabled. You can do so with the following CMake option:
+Projects using ClangToStringTemplate must have CMake ($\geq$ ver. 2.8.5) as your build system with `compile_commands.json` enabled. You can do so with the following CMake option:
 
 ```cmake
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
@@ -63,3 +63,4 @@ python3 cpp-gen.py src/Interface.cpp include/Interface.h build/compile_commands.
 ## License
 
 For licensing information, including third-party dependencies, see the [LICENSES](LICENSES) file.
+
