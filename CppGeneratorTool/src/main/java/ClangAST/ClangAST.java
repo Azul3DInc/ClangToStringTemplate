@@ -80,7 +80,13 @@ public class ClangAST
 
         public ArrayList<String> getIncludes()
         {
-            return includes;
+            if (includes == null)
+            {
+                return new ArrayList<>();
+            }
+            else {
+                return includes;
+            }
         }
 
 
