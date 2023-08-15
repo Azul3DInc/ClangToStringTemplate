@@ -18,6 +18,11 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 This allows the tool to include the dependencies to fully parse your code with Clang.
 
+## Installation
+
+Run ./setup.sh in ClangToStringTemplate. The script will output the path to your jar. Modify your `config.json` in cpp-gen to include the jar path.
+If you're using the Vim Plugin, you'll need to modify cpp-gen where you store your vim plugins.
+
 ## Example Mock Generation
 
 ClangToStringTemplate includes mock generation for interfaces as a fully functioning example demonstrating its usage.  
@@ -51,8 +56,6 @@ Here's an example python invocation:
 python3 cpp-gen.py src/Interface.cpp include/Interface.h build/compile_commands.json MockSource.stg MockImplementationFile MockHeader.stg MockSpecificationFile \
    --ast-template interface --output-paths src/Mocks/Mock.cpp include/Mocks/Mock.h
 ```
-
-## Installation
 
 ## Known Issues
 - In the event of a segmentation fault during the parsing process, consider upgrading your version of clang in `config.json`. Known to fix this issue with clang++15.
