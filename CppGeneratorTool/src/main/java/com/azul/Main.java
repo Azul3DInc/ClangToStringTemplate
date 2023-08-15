@@ -1,4 +1,4 @@
-package org.example;
+package com.azul;
 
 import Generator.Generator;
 import CommandLineParser.CommandLineParser;
