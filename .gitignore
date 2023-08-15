@@ -11,8 +11,8 @@ src/GitVersion
 
 **/.cache
 compile_commands.json
-Application
 Test_Foo
+Application
 
 CMakeLists.txt.user
 CMakeCache.txt
