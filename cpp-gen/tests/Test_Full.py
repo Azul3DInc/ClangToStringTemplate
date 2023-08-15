@@ -21,12 +21,11 @@ class Test_Full(unittest.TestCase):
       
       gu = GenerationUnit('{"key": "value"}', 'output.cpp', 'output.h')
 
-      generator = Generator(configJson.get("CppGeneratorToolPath"), "example", \
+      generator = Generator(configJson.get("cppGeneratorToolPath"), "example", \
               "ExampleSource.stg", "ExampleImplementationFile", \
               "ExampleHeader.stg", "ExampleSpecificationFile")
 
       generator.addGenerationUnit(gu)
-
 
       # EXERCISE
 
@@ -34,7 +33,7 @@ class Test_Full(unittest.TestCase):
 
       # VERIFY
 
-      len(stdout) == 2
+      self.assertEqual(len(stdout), 2)
 
 if __name__ == '__main__':
    unittest.main()

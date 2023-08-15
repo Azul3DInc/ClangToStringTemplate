@@ -37,7 +37,7 @@ class Test_Generator(unittest.TestCase):
 
       # VERIFY
 
-      len(generator.generationUnits) == 1
+      self.assertEqual(len(generator.generationUnits), 1)
       self.assertEqual(generator.generationUnits[0].getJsonStr(), "{}")
       
 
