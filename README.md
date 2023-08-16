@@ -37,8 +37,8 @@ You can install the Vim plugin with `vim-plug` with:
 Plug 'Azul3DInc/ClangToStringTemplate', {'rtp': 'cpp-gen/'}
 ```
 
-Remember, you'll need to add the CppGeneratorTool.jar to the Plugin's `config.json`. The Vim plugin cannot be installed standalone and you must also clone CppGeneratorTool and build the jar. 
-The cpp-gen folder will be located in your vim plugins folder.
+Remember, you'll need to add the CppGeneratorTool.jar oath to the Plugin's `config.json`. The Vim plugin cannot be installed standalone and you must also clone CppGeneratorTool and build the jar with `./setup`. 
+The cpp-gen folder will be located with your other vim plugins.
 
 To see an example, first build `Application` in `Test_Application` with CMake. Then vim into an interface in `Test_Application` and type `:GenerateMock`.
 
