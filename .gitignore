@@ -35,6 +35,7 @@ _deps
 *.ipr
 *.iws
 
+config.json
 target/
 pom.xml.tag
 pom.xml.releaseBackup
