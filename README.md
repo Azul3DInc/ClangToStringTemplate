@@ -62,6 +62,7 @@ python3 cpp-gen.py src/Interface.cpp include/Interface.h build/compile_commands.
 
 ## Known Issues
 - In the event of a segmentation fault during the parsing process, consider upgrading your version of clang in `config.json`. Known to fix this issue with clang++15.
+- If the tool is unable to resolve dependencies, you can use the `extraIncludePaths` option in `config.json` to include absolute paths.
 
 ## Relevant Resources
 [StringTemplate cheat sheet](https://github.com/antlr/stringtemplate4/blob/master/doc/cheatsheet.md)
