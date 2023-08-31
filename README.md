@@ -20,8 +20,10 @@ This allows the tool to include the dependencies to fully parse your code with C
 
 ## Installation
 
-Run `./setup.sh` in ClangToStringTemplate. The script will output the path to your jar. Modify your `config.json` in cpp-gen to include the jar path.
-If you're using the Vim plugin, you'll need to modify cpp-gen where you store your Vim plugins.
+Run `./setup.sh` in ClangToStringTemplate. The script will output the path to your jar. 
+
+Rename `config-sample.json` to `config.json` and place into the cpp-gen folder. Modify your `config.json` in cpp-gen to include the jar path.
+If you're using the Vim plugin, you'll need to place the cpp-gen folder where you store your Vim plugins. Additionally, include the `config.json` in that same folder.
 
 ## Example Mock Generation
 
